@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --bg: #0b0b0d;
+      --card: #111114;
+      --accent: #d4af37;
+      --accent-light: #e6c767;
+      --text-dark: #f5f5f5;
+      --text-soft: #cccccc;
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text-dark); transition: background .4s ease; }
+    header { padding: 2.5rem 1.5rem; max-width: 960px; margin: 0 auto; }
+    nav { display:flex; justify-content:space-between; align-items:center; }
+    nav a { color: var(--text-soft); text-decoration:none; margin-left:1.25rem; font-size:0.95rem; padding: .35rem .7rem; border-radius: 999px; transition: all .25s ease; }
+    nav a:hover { background: var(--accent-light); color: var(--text-dark); transform: translateY(-2px); }
+    .hero { padding: 3rem 1.5rem 4rem; max-width:960px; margin:0 auto; animation: fadeUp .8s ease both; }
+    .hero h1 { font-size:2.4rem; margin:0 0 1rem; }
+    .hero p { max-width:640px; line-height:1.6; color:var(--text-soft); }
+    .section { padding: 2.5rem 1.5rem; max-width:960px; margin:0 auto; animation: fadeUp .9s ease both; }
+    .card-grid { display:grid; gap:1.25rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+    .card { background: var(--card); border:1px solid #ececf7; border-radius:22px; padding:1.25rem 1.5rem; box-shadow:0 14px 28px rgba(0,0,0,.05); transition: all .3s ease; animation: fadeUp .9s ease both; }
+    .card:hover { transform: translateY(-4px) scale(1.01); box-shadow:0 18px 34px rgba(0,0,0,.09); }
+    .btn { display:inline-block; padding:0.65rem 1.1rem; border-radius:999px; background: var(--accent); color:white; text-decoration:none; font-size:0.9rem; box-shadow:0 10px 20px rgba(155,155,242,.25); transition: all .25s ease; }
+    .btn:hover { transform: translateY(-3px); box-shadow:0 14px 26px rgba(155,155,242,.35); }
+    img { animation: pop .7s ease both; }
+    footer { padding:2.5rem 1.5rem; text-align:center; color:var(--text-soft); animation: fadeUp 1s ease both; }
+    @keyframes fadeUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+    @keyframes pop { from { opacity:0; transform: scale(.8); } to { opacity:1; transform: scale(1); } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <strong>My Portfolio</strong>
+      <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <button id="themeToggle" style="border:none; background:var(--card); padding:.45rem .9rem; border-radius:999px; cursor:pointer; font-size:.8rem; box-shadow:0 8px 16px rgba(0,0,0,.06);">Toggle Theme</button>
+  </header>
+
+  <section class="hero">
+    <div style="display:grid; gap:1.5rem; grid-template-columns:1fr; align-items:center;">
+      <div>
+        <h1>Hi, I'm <span id="name">Shajeeth S</span> 👋</h1>
+        <p>Mechanical Engineering student interested in failure analysis, testing, and practical problem-solving. Passionate about learning through hands-on projects and internships.</p>
+      </div>
+      <div style="justify-self:start;">
+        <img src="profile.jpg" alt="Shajeeth S" style="width:160px; height:160px; object-fit:cover; border-radius:999px; border:3px solid #1f2937;" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>I am a motivated Mechanical Engineering student from SKCET with strong analytical skills and hands-on exposure through multiple internships. My interests include failure analysis, testing, and product development. I work with CAD tools like SolidWorks and Fusion 360, along with CNC and quality control tools. I also have fundamentals in Python, Java, and C, and enjoy collaborating on innovative engineering projects.</p>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Railway Guidance System</h3>
+        <p>Designed a system to prevent train–animal collisions using ESP32, NEO-8M GPS, and directional ultrasonic alerts.</p>
+      </div>
+      <div class="card">
+        <h3>Study on Perpetual Machines</h3>
+        <p>Explored theoretical limits of efficiency and modeled mechanisms to understand performance behavior.</p>
+      </div>
+      <div class="card">
+        <h3>FKDC-7 Go-Kart (Team)</h3>
+        <p>Worked with a 27-member team to design and build a competitive go-kart with emphasis on safety and reliability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="internships">
+    <h2>Internships</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Cheran Agro Tech — Student Intern</h3>
+        <p>Observed pump manufacturing, testing and troubleshooting. Learned impellers, shafts, seals, and quality checks.</p>
+      </div>
+      <div class="card">
+        <h3>ISRO Propulsion Complex — In-Plant Trainee</h3>
+        <p>Gained exposure to Non-Destructive Testing (NDT) techniques and safety procedures.</p>
+      </div>
+      <div class="card">
+        <h3>Shashti Techno Products — Intern</h3>
+        <p>Hands-on learning with CNC operations, precision measuring tools, and safe manufacturing practices.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>SOLIDWORKS (CSWA) — Udemy</li>
+      <li>Basics of Python — Infosys Springboard</li>
+      <li>Java Programming Fundamentals — Infosys Springboard</li>
+      <li>Design Thinking — A Primer</li>
+      <li>Technical English for Engineers</li>
+      <li>Soft Skills, Stress Management & Personality Development</li>
+    </ul>
+  </section>
+
+  <section class="section" id="resume">
+    <h2>Resume</h2>
+    <p>You can download my complete resume below.</p>
+    <a class="btn" href="https://drive.google.com/file/d/11oSxn0tGZ1q8LmwCCVo_cKn25nI_Sx2r/view?usp=sharing" target="_blank">Download Resume</a>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <strong>shajeethss@gmail.com</strong></p>
+    <p>Phone: <strong>+91 95003 99410</strong></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/shajeeth-s-515871243" target="_blank">linkedin.com/in/shajeeth-s-515871243</a></p>
+  </section>
+
+  <footer>© 2025 — Shajeeth S. All rights reserved.</footer>
+
+<script>
+  const palettes = [
+    { bg:'#0b0b0d', card:'#111114', accent:'#d4af37', light:'#e6c767', text:'#f5f5f5', soft:'#cccccc' },
+    { bg:'#111111', card:'#16161a', accent:'#c9a227', light:'#e6c767', text:'#fafafa', soft:'#d0d0d0' }
+  ];
+  let paletteIndex = 0;
+  const root = document.documentElement;
+  function applyPalette(p) {
+    root.style.setProperty('--bg', p.bg);
+    root.style.setProperty('--card', p.card);
+    root.style.setProperty('--accent', p.accent);
+    root.style.setProperty('--accent-light', p.light);
+    root.style.setProperty('--text-dark', p.text);
+    root.style.setProperty('--text-soft', p.soft);
+  }
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    paletteIndex = (paletteIndex + 1) % palettes.length;
+    applyPalette(palettes[paletteIndex]);
+  });
+  const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.style.opacity = 1; e.target.style.transform = 'translateY(0)'; } });
+  }, {threshold: 0.15});
+  document.querySelectorAll('.section, .card').forEach(el => {
+    el.style.opacity = 0; el.style.transform = 'translateY(28px)'; el.style.transition = 'all .6s ease'; reveal.observe(el);
+  });
+</script>
+</body>
+</html>
